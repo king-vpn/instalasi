@@ -7,13 +7,13 @@ apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && apt -y i
 ## INSTALL SCRIPT 
 Masukkan perintah dibawah untuk menginstall Autoscript
 ```
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/sanzVPN/instalasi/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl unzip && wget https://raw.githubusercontent.com/king-vpn/instalasi/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
 ```
 
 ## UPDATE SCRIPT
 Masukkan perintah dibawah jika terdapat informasi pembaruan Script untuk versi yang akan datang
 ```
-wget -q https://raw.githubusercontent.com/sanzVPN/instalasi/main/update.sh && chmod +x update.sh && ./update.sh
+wget -q https://raw.githubusercontent.com/king-vpn/instalasi/main/update.sh && chmod +x update.sh && ./update.sh
 ```
 
 ## TESTED ON OS
