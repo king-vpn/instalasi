@@ -11,7 +11,7 @@ organization=none
 organizationalunit=none
 commonname=none
 email=andyyuda51@gmail.com
-curl -sS https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 > /etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 cd
 cat > /etc/systemd/system/rc-local.service <<-END
@@ -84,11 +84,11 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/nginx.conf"
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -175,11 +175,11 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/sanzVPN/instalasi/main/issue.net"
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/king-vpn/instalasi/master/issue.net"
 chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
-wget https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
 iptables -A FORWARD -m string --string "announce_peer" --algo bm -j DROP
 iptables -A FORWARD -m string --string "find_node" --algo bm -j DROP
@@ -196,57 +196,57 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 cd /usr/bin
-wget -O menu "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu.sh"
-wget -O menu-trial "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-trial.sh"
-wget -O menu-vmess "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-vmess.sh"
-wget -O menu-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-vless.sh"
-wget -O running "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/running.sh"
-wget -O clearcache "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/clearcache.sh"
-wget -O menu-trgo "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-trgo.sh"
-wget -O menu-trojan "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-trojan.sh"
-wget -O menu-ssh "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-ssh.sh"
-wget -O usernew "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/usernew.sh"
-wget -O trial "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/trial.sh"
-wget -O renew "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/renew.sh"
-wget -O hapus "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/hapus.sh"
-wget -O cek "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/cek.sh"
-wget -O member "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/member.sh"
-wget -O delete "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/delete.sh"
-wget -O autokill "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/autokill.sh"
-wget -O ceklim "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/ceklim.sh"
-wget -O tendang "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/tendang.sh"
-wget -O xp "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/xp.sh"
-wget -O menu-set "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-set.sh"
-wget -O menu-domain "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-domain.sh"
-wget -O add-host "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/add-host.sh"
-wget -O port-change "https://raw.githubusercontent.com/sanzVPN/instalasi/main/port/port-change.sh"
-wget -O certv2ray "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/certv2ray.sh"
-wget -O menu-webmin "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-webmin.sh"
-wget -O speedtest "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/speedtest_cli.py"
-wget -O about "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/about.sh"
-wget -O auto-reboot "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/auto-reboot.sh"
-wget -O restart "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/restart.sh"
-wget -O bw "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/bw.sh"
-wget -O menu-theme "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu-theme.sh"
-wget -O menu1 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu1.sh"
-wget -O menu2 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu2.sh"
-wget -O menu3 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu3.sh"
-wget -O menu4 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu4.sh"
-wget -O menu5 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu5.sh"
-wget -O port-ssl "https://raw.githubusercontent.com/sanzVPN/instalasi/main/port/port-ssl.sh"
-wget -O port-ovpn "https://raw.githubusercontent.com/sanzVPN/instalasi/main/port/port-ovpn.sh"
-wget -O acs-set "https://raw.githubusercontent.com/sanzVPN/instalasi/main/acs-set.sh"
-wget -O status "https://raw.githubusercontent.com/sanzVPN/instalasi/main/status.sh"
-wget -O sshws "https://raw.githubusercontent.com/sanzVPN/instalasi/main/sshws/sshws.sh"
-wget -O status "https://raw.githubusercontent.com/sanzVPN/instalasi/main/status.sh"
-wget -O menu-backup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-backup.sh"
-wget -O backup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/restore.sh"
-wget -O jam "https://raw.githubusercontent.com/sanzVPN/instalasi/main/jam.sh"
-wget -q -O /usr/bin/xolpanel "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xolpanel/xolpanel.sh"
-wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/sanzVPN/instalasi/main/user-lock.sh"
-wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/sanzVPN/instalasi/main/user-unlock.sh"
-wget -q -O /usr/bin/update "https://raw.githubusercontent.com/sanzVPN/instalasi/main/update.sh"
+wget -O menu "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu.sh"
+wget -O menu-trial "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-trial.sh"
+wget -O menu-vmess "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-vmess.sh"
+wget -O menu-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-vless.sh"
+wget -O running "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/running.sh"
+wget -O clearcache "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/clearcache.sh"
+wget -O menu-trgo "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-trgo.sh"
+wget -O menu-trojan "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-trojan.sh"
+wget -O menu-ssh "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-ssh.sh"
+wget -O usernew "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/trial.sh"
+wget -O renew "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/renew.sh"
+wget -O hapus "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/hapus.sh"
+wget -O cek "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/cek.sh"
+wget -O member "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/member.sh"
+wget -O delete "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/delete.sh"
+wget -O autokill "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/tendang.sh"
+wget -O xp "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/xp.sh"
+wget -O menu-set "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-set.sh"
+wget -O menu-domain "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-domain.sh"
+wget -O add-host "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/add-host.sh"
+wget -O port-change "https://raw.githubusercontent.com/king-vpn/instalasi/master/port/port-change.sh"
+wget -O certv2ray "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/certv2ray.sh"
+wget -O menu-webmin "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-webmin.sh"
+wget -O speedtest "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/speedtest_cli.py"
+wget -O about "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/about.sh"
+wget -O auto-reboot "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/auto-reboot.sh"
+wget -O restart "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/restart.sh"
+wget -O bw "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/bw.sh"
+wget -O menu-theme "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu-theme.sh"
+wget -O menu1 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu1.sh"
+wget -O menu2 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu2.sh"
+wget -O menu3 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu3.sh"
+wget -O menu4 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu4.sh"
+wget -O menu5 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu5.sh"
+wget -O port-ssl "https://raw.githubusercontent.com/king-vpn/instalasi/master/port/port-ssl.sh"
+wget -O port-ovpn "https://raw.githubusercontent.com/king-vpn/instalasi/master/port/port-ovpn.sh"
+wget -O acs-set "https://raw.githubusercontent.com/king-vpn/instalasi/master/acs-set.sh"
+wget -O status "https://raw.githubusercontent.com/king-vpn/instalasi/master/status.sh"
+wget -O sshws "https://raw.githubusercontent.com/king-vpn/instalasi/master/sshws/sshws.sh"
+wget -O status "https://raw.githubusercontent.com/king-vpn/instalasi/master/status.sh"
+wget -O menu-backup "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-backup.sh"
+wget -O backup "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/restore.sh"
+wget -O jam "https://raw.githubusercontent.com/king-vpn/instalasi/master/jam.sh"
+wget -q -O /usr/bin/xolpanel "https://raw.githubusercontent.com/king-vpn/instalasi/master/xolpanel/xolpanel.sh"
+wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/king-vpn/instalasi/master/user-lock.sh"
+wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/king-vpn/instalasi/master/user-unlock.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/king-vpn/instalasi/master/update.sh"
 chmod +x xolpanel
 chmod +x menu
 chmod +x menu-trial
