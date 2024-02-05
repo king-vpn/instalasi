@@ -9,7 +9,7 @@ exit 1
 fi
 echo ""
 version=$(cat /home/ver)
-ver=$( curl https://raw.githubusercontent.com/sanzVPN/instalasi/main/version )
+ver=$( curl https://raw.githubusercontent.com/king-vpn/instalasi/maater/version )
 clear
 line=$(cat /etc/line)
 below=$(cat /etc/below)
@@ -21,7 +21,7 @@ Info1="${Green_font_prefix}($version)${Font_color_suffix}"
 Info2="${Green_font_prefix}(OLD VERSION)${Font_color_suffix}"
 Error="Version ${Green_font_prefix}[$ver]${Font_color_suffix} available${Red_font_prefix}[Please Update]${Font_color_suffix}"
 version=$(cat /home/ver)
-new_version=$( curl https://raw.githubusercontent.com/sanzVPN/instalasi/main/version | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/king-vpn/instalasi/maater/version | grep $version )
 if [ $version = $new_version ]; then
 sts="${Info2}"
 else
@@ -48,7 +48,7 @@ read -p "PPlease Choose 1 or x : " option2
 case $option2 in
 1)
 version=$(cat /home/ver)
-new_version=$( curl https://raw.githubusercontent.com/sanzVPN/instalasi/main/version | grep $version )
+new_version=$( curl https://raw.githubusercontent.com/king-vpn/instalasi/maater/version | grep $version )
 if [ $version = $new_version ]; then
 clear
 echo ""
@@ -75,7 +75,7 @@ echo -e "\e[0;32mGetting New Version Script..\e[0m"
 sleep 1
 echo ""
 cd /usr/bin
-wget -O run-update "https://raw.githubusercontent.com/sanzVPN/instalasi/main/update.sh"
+wget -O run-update "https://raw.githubusercontent.com/king-vpn/instalasi/master/update.sh"
 chmod +x run-update
 echo ""
 clear
@@ -86,51 +86,51 @@ echo ""
 echo -e "\e[0;32mNew Version Downloading started!\e[0m"
 sleep 2
 cd /usr/bin
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/usernew.sh"
-wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/auto-reboot.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/restart.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/tendang.sh"
-wget -q -O /usr/bin/clearcache "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/clearcache.sh"
-wget -q -O /usr/bin/running "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/running.sh"
-wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/speedtest_cli.py"
-wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-vless.sh"
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-vmess.sh"
-wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-trojan.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-backup.sh"
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu.sh"
-wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu1.sh"
-wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu2.sh"
-wget -q -O /usr/bin/menu3 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu3.sh"
-wget -q -O /usr/bin/menu4 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu4.sh"
-wget -q -O /usr/bin/menu5 "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu5.sh"
-wget -q -O /usr/bin/menu-webmin "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-webmin.sh"
-wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/xp.sh"
-wget -q -O /usr/bin/update "https://raw.githubusercontent.com/sanzVPN/instalasi/main/update.sh"
-wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/add-host.sh"
-wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/certv2ray.sh"
-wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-set.sh"
-wget -q -O /usr/bin/about "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/about.sh"
-wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-backup.sh"
-wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/trial.sh"
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/sanzVPN/instalasi/main/ssh/usernew.sh"
-wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/add-tr.sh"
-wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/del-tr.sh"
-wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/cek-tr.sh"
-wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/trialtrojan.sh"
-wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/renew-tr.sh"
-wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/add-ws.sh"
-wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/del-ws.sh"
-wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/cek-ws.sh"
-wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/renew-ws.sh"
-wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/trialvmess.sh"
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/add-vless.sh"
-wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/del-vless.sh"
-wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/cek-vless.sh"
-wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/renew-vless.sh"
-wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/sanzVPN/instalasi/main/xray/trialvless.sh"
-wget -q -O /usr/bin/menu-trial "https://raw.githubusercontent.com/sanzVPN/instalasi/main/menu/menu-trial.sh"
-wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/sanzVPN/instalasi/main/theme/menu-theme.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/usernew.sh"
+wget -q -O /usr/bin/auto-reboot "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/auto-reboot.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/restart.sh"
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/tendang.sh"
+wget -q -O /usr/bin/clearcache "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/clearcache.sh"
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/running.sh"
+wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/speedtest_cli.py"
+wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-vless.sh"
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-vmess.sh"
+wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-trojan.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-ssh.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-backup.sh"
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu.sh"
+wget -q -O /usr/bin/menu1 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu1.sh"
+wget -q -O /usr/bin/menu2 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu2.sh"
+wget -q -O /usr/bin/menu3 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu3.sh"
+wget -q -O /usr/bin/menu4 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu4.sh"
+wget -q -O /usr/bin/menu5 "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu5.sh"
+wget -q -O /usr/bin/menu-webmin "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-webmin.sh"
+wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/xp.sh"
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/king-vpn/instalasi/master/update.sh"
+wget -q -O /usr/bin/add-host "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/add-host.sh"
+wget -q -O /usr/bin/certv2ray "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/certv2ray.sh"
+wget -q -O /usr/bin/menu-set "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-set.sh"
+wget -q -O /usr/bin/about "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/about.sh"
+wget -q -O /usr/bin/menu-backup "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-backup.sh"
+wget -q -O /usr/bin/trial "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/trial.sh"
+wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/king-vpn/instalasi/master/ssh/usernew.sh"
+wget -q -O /usr/bin/add-tr "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/add-tr.sh"
+wget -q -O /usr/bin/del-tr "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/del-tr.sh"
+wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/cek-tr.sh"
+wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/trialtrojan.sh"
+wget -q -O /usr/bin/renew-tr "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/renew-tr.sh"
+wget -q -O /usr/bin/add-ws "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/add-ws.sh"
+wget -q -O /usr/bin/del-ws "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/del-ws.sh"
+wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/cek-ws.sh"
+wget -q -O /usr/bin/renew-ws "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/renew-ws.sh"
+wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/trialvmess.sh"
+wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/add-vless.sh"
+wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/del-vless.sh"
+wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/cek-vless.sh"
+wget -q -O /usr/bin/renew-vless "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/renew-vless.sh"
+wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/king-vpn/instalasi/master/xray/trialvless.sh"
+wget -q -O /usr/bin/menu-trial "https://raw.githubusercontent.com/king-vpn/instalasi/master/menu/menu-trial.sh"
+wget -q -O /usr/bin/menu-theme "https://raw.githubusercontent.com/king-vpn/instalasi/master/theme/menu-theme.sh"
 chmod +x /usr/bin/usernew
 chmod +x /usr/bin/auto-reboot
 chmod +x /usr/bin/restart
@@ -181,7 +181,7 @@ clear
 echo -e ""
 echo -e "\e[0;32mDownloaded successfully!\e[0m"
 echo ""
-ver=$( curl https://raw.githubusercontent.com/sanzVPN/instalasi/main/version )
+ver=$( curl https://raw.githubusercontent.com/king-vpn/instalasi/master/version )
 sleep 1
 echo -e "\e[0;32mPatching New Update, Please Wait...\e[0m"
 echo ""
