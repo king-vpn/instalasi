@@ -39,7 +39,7 @@ figlet "theme-1" | lolcat
 menu1
 echo "--------------------------------------------------------"
 echo
-echo "SANZ TUNNELING"
+echo "TUNNELING"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -49,7 +49,7 @@ figlet "Theme-2" | lolcat
 menu2
 echo "--------------------------------------------------------"
 echo
-echo "SANZ TUNNELING"
+echo "TUNNELING"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -59,7 +59,7 @@ figlet "Theme-3"
 menu3
 echo "--------------------------------------------------------"
 echo
-echo "SANZ TUNNELING"
+echo "TUNNELING"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -69,7 +69,7 @@ figlet "Theme-4"
 menu4
 echo "--------------------------------------------------------"
 echo
-echo "SANZ TUNNELING"
+echo "TUNNELING"
 echo
 echo "--------------------------------------------------------"
 fi
@@ -79,7 +79,7 @@ figlet "Theme-5"
 menu5
 echo "--------------------------------------------------------"
 echo
-echo "SANZ TUNNELING"
+echo "TUNNELING"
 echo
 echo "--------------------------------------------------------"
 fi
