@@ -9,7 +9,7 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 apt install rclone -y
 printf "q\n" | rclone config
-wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/rclone.conf"
+wget -O /root/.config/rclone/rclone.conf "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/rclone.conf"
 cd /bin
 git clone  https://github.com/magnific0/wondershaper.git
 cd wondershaper
@@ -34,11 +34,11 @@ logfile ~/.msmtp.log
 EOF
 chown -R www-data:www-data /etc/msmtprc
 cd /usr/bin
-wget -O autobackup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/autobackup.sh"
-wget -O backup "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/backup.sh"
-wget -O restore "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/restore.sh"
-wget -O strt "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/strt.sh"
-wget -O limitspeed "https://raw.githubusercontent.com/sanzVPN/instalasi/main/backup/limitspeed.sh"
+wget -O autobackup "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/autobackup.sh"
+wget -O backup "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/backup.sh"
+wget -O restore "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/restore.sh"
+wget -O strt "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/strt.sh"
+wget -O limitspeed "https://raw.githubusercontent.com/king-vpn/instalasi/master/backup/limitspeed.sh"
 chmod +x autobackup
 chmod +x backup
 chmod +x restore
