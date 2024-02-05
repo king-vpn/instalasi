@@ -1,6 +1,6 @@
 #!/bin/bash
 BURIQ () {
-curl -sS https://raw.githubusercontent.com/sanzVPN/instalasi/main/register > /root/tmp
+curl -sS https://raw.githubusercontent.com/king-vpn/instalasi/master/register > /root/tmp
 data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
 for user in "${data[@]}"
 do
@@ -17,7 +17,7 @@ done
 rm -f /root/tmp
 }
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/sanzVPN/instalasi/main/register | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/king-vpn/instalasi/master/register | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 Bloman () {
@@ -32,7 +32,7 @@ fi
 }
 PERMISSION () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/sanzVPN/instalasi/main/register | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/king-vpn/instalasi/master/register | awk '{print $4}' | grep $MYIP)
 if [ "$MYIP" = "$IZIN" ]; then
 Bloman
 else
@@ -49,7 +49,7 @@ PERMISSION
 if [ "$res" = "Expired" ]; then
 Exp="\e[36mExpired\033[0m"
 else
-Exp=$(curl -sS https://raw.githubusercontent.com/sanzVPN/instalasi/main/register | grep $MYIP | awk '{print $3}')
+Exp=$(curl -sS https://raw.githubusercontent.com/king-vpn/instalasi/master/register | grep $MYIP | awk '{print $3}')
 fi
 vlx=$(grep -c -E "^#& " "/etc/xray/config.json")
 let vla=$vlx/2
@@ -224,7 +224,7 @@ d1=$(date -d "$1" +%s)
 d2=$(date -d "$2" +%s)
 }
 mai="datediff "$Exp" "$DATE""
-export sem=$( curl -s https://raw.githubusercontent.com/sanzVPN/instalasi/main/version)
+export sem=$( curl -s https://raw.githubusercontent.com/king-vpn/instalasi/master/version)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 clear
@@ -286,7 +286,7 @@ case $opt in
 7) clear ; menu-backup ;;
 8) clear ; add-host ;;
 9) clear ; running ;;
-10) clear ; clear ; wget https://raw.githubusercontent.com/sanzVPN/instalasi/main/files/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh ;;
+10) clear ; clear ; wget https://raw.githubusercontent.com/king-vpn/instalasi/master/files/udp-custom.sh && chmod +x udp-custom.sh && ./udp-custom.sh ;;
 11) clear ; xolpanel ;;
 12) clear ; bw ;;
 13) clear ; menu-theme ;;
